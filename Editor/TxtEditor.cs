@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.IO;
 
 public class TxtEditor : EditorWindow
 {
@@ -19,7 +20,9 @@ public class TxtEditor : EditorWindow
     public string talkText;
     public string talkIcon;
     public string nextchapter;
+    public string target_txt;
     string output;
+    
 
     public enum TxTType {
         background=0 ,
@@ -33,6 +36,7 @@ public class TxtEditor : EditorWindow
     }
     private void OnGUI() {
         type = (TxTType)EditorGUILayout.EnumPopup(type);
+        target_txt = EditorGUILayout.TextField("请输入目标txt名称:",target_txt);
         if(type == TxTType.background) {
             EditorGUILayout.LabelField("编辑器类型为背景图:");
             EditorGUILayout.LabelField("请输入背景图的名称:(例:backgroud.jpg)");
@@ -62,6 +66,14 @@ public class TxtEditor : EditorWindow
                 output = $"{(int)type}|{nextchapter}";
             }
         }
-        EditorGUILayout.TextField("生成的行语句为:", output);
+        EditorGUILayout.LabelField("生成的行语句为:", output);
+        if (GUILayout.Button($"压入{target_txt}中")) {
+            StreamWriter sw;
+            FileInfo fi = new FileInfo("Assets/Gal/Texts/" + target_txt);
+            sw = fi.AppendText();
+            sw.WriteLine(output);
+            sw.Close();
+            sw.Dispose();
+        }
     }
 }
