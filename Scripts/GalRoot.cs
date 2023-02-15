@@ -108,7 +108,6 @@ namespace gal {
                     left.gameObject.SetActive(false);
                 }
                 setText(_name, data.name);
-                //setText(talk, data.talk);
                 talk.GetComponent<ShowInfoBySteps>().setText(data.talk);
             } else if(data.type == 2) {
 

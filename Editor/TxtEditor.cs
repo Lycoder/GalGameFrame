@@ -38,19 +38,20 @@ public class TxtEditor : EditorWindow
         type = (TxTType)EditorGUILayout.EnumPopup(type);
         target_txt = EditorGUILayout.TextField("请输入目标txt名称:",target_txt);
         if(type == TxTType.background) {
-            EditorGUILayout.LabelField("编辑器类型为背景图:");
+            EditorGUILayout.LabelField("编辑器类型为---背景图");
+            GUILayout.Space(10);
             EditorGUILayout.LabelField("请输入背景图的名称:(例:backgroud.jpg)");
             backgroudName = EditorGUILayout.TextField("",backgroudName);
         }
         else if (type == TxTType.character) {
-            EditorGUILayout.LabelField("编辑器类型为角色:");
+            EditorGUILayout.LabelField("编辑器类型为---角色");
             c_position = (pos)EditorGUILayout.EnumPopup("请选择人物位置:",c_position);
             talkName = EditorGUILayout.TextField("请输入说话人的名字", talkName);
             talkText = EditorGUILayout.TextField("请输入说话内容:", talkText);
             talkIcon = EditorGUILayout.TextField("请输入说话人的立绘:",talkIcon);
         }
         else if(type == TxTType.chapter) {
-            EditorGUILayout.LabelField("编辑器类型为背景图:");
+            EditorGUILayout.LabelField("编辑器类型为---新的章节");
             EditorGUILayout.LabelField("请输入新章节的名称:(例:next.txt)");
             nextchapter = EditorGUILayout.TextField("", nextchapter);
         }

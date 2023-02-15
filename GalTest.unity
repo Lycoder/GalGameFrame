@@ -208,6 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 279389411}
   - component: {fileID: 279389412}
+  - component: {fileID: 279389413}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -243,6 +244,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   line: 0
   chapter: first.txt
+--- !u!114 &279389413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279389410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c524c502cb9a7c548ace571ef9b87dc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 11400000, guid: b4560956e6ea6da409226269fdee23fc, type: 2}
 --- !u!1 &337533820
 GameObject:
   m_ObjectHideFlags: 0
